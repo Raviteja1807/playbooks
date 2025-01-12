@@ -1,0 +1,24 @@
+---
+- name: Install git, create an empty folder and clone a remote repository
+  hosts: all
+  tasks: 
+    - name: Install git
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+    - name: create an empty folder
+      file:
+        name: /tmp/folder20
+        state: directory
+    - name: clone a remote repository
+      git: 
+        repo: https://github.com/Raviteja1807/Myproject.git
+        dest: /tmp/folder20     
+
+
+
+
+
+
+...
