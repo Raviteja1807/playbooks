@@ -1,0 +1,16 @@
+---
+- name: Uninstall tomcat10 and tomcat10- admin
+  hosts: all
+  tasks:
+    - name: Uninstall tomcat10
+      apt:
+        name: tomcat10
+        state: absent
+        purge: yes
+    - name: Uninstall tomcat10-admin
+      apt:
+        name: tomcat10-admin
+        state: absent
+        purge: yes
+
+...
